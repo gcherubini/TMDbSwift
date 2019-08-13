@@ -1,20 +1,15 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'TMDbSwift' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TMDbSwift
+	pod 'Moya', '13.0.0'
 
-  target 'TMDbSwiftTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'TMDbSwiftUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+	abstract_target 'Tests' do
+		target "TMDbSwiftTests"
+		target "TMDbSwiftUITests"
+		
+		pod 'Quick', '2.1.0'
+		pod 'Nimble', '8.0.1'
+	end
 end

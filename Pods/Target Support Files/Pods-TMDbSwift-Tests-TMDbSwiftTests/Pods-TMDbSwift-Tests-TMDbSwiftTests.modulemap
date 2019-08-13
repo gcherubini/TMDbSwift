@@ -1,0 +1,6 @@
+framework module Pods_TMDbSwift_Tests_TMDbSwiftTests {
+  umbrella header "Pods-TMDbSwift-Tests-TMDbSwiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
