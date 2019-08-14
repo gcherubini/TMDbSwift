@@ -26,9 +26,20 @@ struct MovieModel: Equatable {
 
 		overview = movie.overview
 		
-		self.genres = nil
-		// TODO: proccess genres
-			
 		releaseDate = movie.releaseDate
+		
+		var genresFound = [String]()
+		
+		if let movieGenresIds = movie.genreIds, let genres = genres {
+			for movieGenreId in movieGenresIds {
+				for genre in genres {
+					if movieGenreId == genre.id {
+						genresFound.append(genre.name)
+					}
+				}
+			}
+		}
+		
+		self.genres = genresFound.isEmpty ? nil : genresFound.joined(separator:", ")
 	}
 }

@@ -17,11 +17,11 @@ protocol UpcomingMoviesView: class{
 class UpcomingMoviesPresenter {
 	
 	private weak var view: UpcomingMoviesView?
-	private let interactor: UpcomingMoviesInteractor
+	private let interactor: MoviesInteractor
 	private let formatter = DateFormatter()
 	
 	init(view: UpcomingMoviesView?,
-		 interactor: UpcomingMoviesInteractor = UpcomingMoviesInteractor()) {
+		 interactor: MoviesInteractor = MoviesInteractor()) {
 		self.view = view
 		self.interactor = interactor
 	}

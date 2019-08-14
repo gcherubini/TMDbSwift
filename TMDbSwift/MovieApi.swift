@@ -37,7 +37,7 @@ extension MovieApi: TargetType {
 	var task: Task {
 		switch self {
 		case .getMovies, .getGenres:
-			return .requestParameters(parameters: ["apikey": apiKey], encoding: URLEncoding.queryString)
+			return .requestParameters(parameters: ["api_key": apiKey], encoding: URLEncoding.queryString)
 		}
 	}
 	

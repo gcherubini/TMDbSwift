@@ -19,12 +19,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action and Drama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0U-Wu-lHa">
-                        <rect key="frame" x="95" y="61.5" width="101" height="14.5"/>
+                        <rect key="frame" x="95" y="61.5" width="345.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-08-02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mT-o4-0R9">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2019-08-02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mT-o4-0R9">
                         <rect key="frame" x="455.5" y="61.5" width="69.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
@@ -53,6 +53,7 @@
                     <constraint firstAttribute="trailing" secondItem="VGp-EY-Of2" secondAttribute="trailing" constant="20" id="DnD-gb-Qw5"/>
                     <constraint firstItem="Hbb-hK-Bvg" firstAttribute="leading" secondItem="sZ9-Ux-e67" secondAttribute="leading" constant="20" id="EIk-4Q-GOx"/>
                     <constraint firstItem="Hbb-hK-Bvg" firstAttribute="top" secondItem="sZ9-Ux-e67" secondAttribute="top" constant="15" id="WHQ-uu-VJC"/>
+                    <constraint firstItem="1mT-o4-0R9" firstAttribute="leading" secondItem="R0U-Wu-lHa" secondAttribute="trailing" constant="15" id="dyd-gO-DVU"/>
                     <constraint firstAttribute="bottom" secondItem="Hbb-hK-Bvg" secondAttribute="bottom" constant="15" id="h0n-6h-OXr"/>
                     <constraint firstItem="R0U-Wu-lHa" firstAttribute="leading" secondItem="Hbb-hK-Bvg" secondAttribute="trailing" constant="15" id="h1K-SC-CrR"/>
                 </constraints>

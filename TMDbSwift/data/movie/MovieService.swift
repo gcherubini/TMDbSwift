@@ -10,7 +10,6 @@ import Foundation
 import Moya
 
 class MovieService: MovieRepository {
-	// Results on background thread
 	let provider = MoyaProvider<MovieApi>(callbackQueue: DispatchQueue.global(qos: .utility))
 	
 	func getMovies(completion: @escaping ([Movie]?, Error?) -> ()) {
