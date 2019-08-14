@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class UpcomingMoviesViewController: UITableViewController, UpcomingMoviesView {
+class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesView {
 	
 	private var presenter: UpcomingMoviesPresenter?
 	

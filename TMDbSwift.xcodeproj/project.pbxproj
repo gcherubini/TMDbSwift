@@ -32,7 +32,7 @@
 		79D170FB23034FA9001AEACD /* UpcomingMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D170FA23034FA9001AEACD /* UpcomingMoviesCoordinator.swift */; };
 		79D170FD23034FDD001AEACD /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D170FC23034FDD001AEACD /* CoordinatorFactory.swift */; };
 		79D171002303502E001AEACD /* UpcomingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D170FF2303502E001AEACD /* UpcomingMoviesViewController.swift */; };
-		79D1710223035063001AEACD /* UpcomingMoviesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D1710123035063001AEACD /* UpcomingMoviesView.xib */; };
+		79D1710223035063001AEACD /* UpcomingMoviesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D1710123035063001AEACD /* UpcomingMoviesTableView.xib */; };
 		79D17106230355F0001AEACD /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D17105230355F0001AEACD /* MovieRepository.swift */; };
 		79D1710823035632001AEACD /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1710723035632001AEACD /* MovieModel.swift */; };
 		79D1710B230356FB001AEACD /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1710A230356FB001AEACD /* MovieInteractor.swift */; };
@@ -101,7 +101,7 @@
 		79D170FA23034FA9001AEACD /* UpcomingMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesCoordinator.swift; sourceTree = "<group>"; };
 		79D170FC23034FDD001AEACD /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		79D170FF2303502E001AEACD /* UpcomingMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesViewController.swift; sourceTree = "<group>"; };
-		79D1710123035063001AEACD /* UpcomingMoviesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMoviesView.xib; sourceTree = "<group>"; };
+		79D1710123035063001AEACD /* UpcomingMoviesTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMoviesTableView.xib; sourceTree = "<group>"; };
 		79D17105230355F0001AEACD /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		79D1710723035632001AEACD /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		79D1710A230356FB001AEACD /* MovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
@@ -248,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				79D1710C23035710001AEACD /* data */,
-				79D1711B2303A765001AEACD /* MovieApi.swift */,
 				79D17104230355E1001AEACD /* domain */,
 				79D170F423034F74001AEACD /* presenter */,
 				799D190623034E080012C5BC /* AppDelegate.swift */,
@@ -304,7 +303,7 @@
 		79D170FE23035004001AEACD /* movie */ = {
 			isa = PBXGroup;
 			children = (
-				79D1710123035063001AEACD /* UpcomingMoviesView.xib */,
+				79D1710123035063001AEACD /* UpcomingMoviesTableView.xib */,
 				79D17116230364A3001AEACD /* UpcomingMovieCell.xib */,
 				79D170FF2303502E001AEACD /* UpcomingMoviesViewController.swift */,
 				79D1711223036062001AEACD /* UpcomingMoviesPresenter.swift */,
@@ -338,6 +337,7 @@
 			children = (
 				79D171282303B9AA001AEACD /* genre */,
 				79D1710F23035748001AEACD /* movie */,
+				79D1711B2303A765001AEACD /* MovieApi.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D17117230364A3001AEACD /* UpcomingMovieCell.xib in Resources */,
-				79D1710223035063001AEACD /* UpcomingMoviesView.xib in Resources */,
+				79D1710223035063001AEACD /* UpcomingMoviesTableView.xib in Resources */,
 				799D191123034E0C0012C5BC /* LaunchScreen.storyboard in Resources */,
 				799D190E23034E0C0012C5BC /* Assets.xcassets in Resources */,
 			);

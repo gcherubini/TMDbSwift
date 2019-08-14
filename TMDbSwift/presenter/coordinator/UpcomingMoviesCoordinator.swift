@@ -18,7 +18,7 @@ class UpcomingMoviesCoordinator: Coordinator {
 	}
 	
 	func start() {
-		let viewController = UpcomingMoviesViewController()
+		let viewController = UpcomingMoviesTableViewController()
 		navigationController.pushViewController(viewController, animated: true)
 	}
 }
