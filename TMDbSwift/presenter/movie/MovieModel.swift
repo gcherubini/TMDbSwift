@@ -9,10 +9,10 @@
 import Foundation
 
 struct MovieModel: Equatable {
-	let title: String
-	let imageUrl: String
-	let overview: String
-	let genres: String
-	let releaseDate: String
+	let title: String?
+	let imageUrl: String?
+	let overview: String?
+	let genres: String?
+	let releaseDate: String?
 }
 
