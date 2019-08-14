@@ -9,21 +9,19 @@
 import Foundation
 import Moya
 
-class MovieService: MovieRepository {
-	// Results on background thread
+class GenreService: GenreRepository {
 	let provider = MoyaProvider<MovieApi>(callbackQueue: DispatchQueue.global(qos: .utility))
 	
-	func getMovies(completion: @escaping ([Movie]?, Error?) -> ()) {
-		provider.request(.getMovies) { result in
+	func getGenres(completion: @escaping ([Genre]?, Error?) -> ()) {
+		provider.request(.getGenres) { result in
 			switch result {
 			case let .success(moyaResponse):
-				let decoder = JSONDecoder()
 				do {
-					let response = try decoder.decode(UpcomingMoviesResponse.self, from: moyaResponse.data)
-					let movies = response.results.map({
-						Movie(with: $0)
+					let response = try JSONDecoder().decode(GenresResponse.self, from: moyaResponse.data)
+					let genres = response.genres.map({
+						Genre(with: $0)
 					})
-					completion(movies, nil)
+					completion(genres, nil)
 				} catch let error {
 					print(error)
 					completion(nil, error)

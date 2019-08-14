@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol MovieRepository {
-	func getMovies(completion: @escaping ([Movie]?, Error?) -> ())
+protocol GenreRepository {
+	func getGenres(completion: @escaping ([Genre]?, Error?) -> ())
 }

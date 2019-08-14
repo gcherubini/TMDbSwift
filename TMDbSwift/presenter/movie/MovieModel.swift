@@ -14,5 +14,21 @@ struct MovieModel: Equatable {
 	let overview: String?
 	let genres: String?
 	let releaseDate: String?
-}
+	
+	init(with movie: Movie, genres: [Genre]?) {
+		title = movie.title
+	
+		if let posterImageUrl = movie.posterImageUrl {
+			imageUrl = "https://image.tmdb.org/t/p/w185\(posterImageUrl)"
+		} else {
+			imageUrl = nil
+		}
 
+		overview = movie.overview
+		
+		self.genres = nil
+		// TODO: proccess genres
+			
+		releaseDate = movie.releaseDate
+	}
+}
