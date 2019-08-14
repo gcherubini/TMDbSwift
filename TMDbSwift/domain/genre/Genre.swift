@@ -19,4 +19,3 @@ extension Genre {
 		name = response.name
 	}
 }
-

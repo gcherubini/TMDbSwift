@@ -17,11 +17,11 @@ protocol UpcomingMoviesView: class{
 class UpcomingMoviesPresenter {
 	
 	private weak var view: UpcomingMoviesView?
-	private let interactor: MoviesInteractor
+	private let interactor: MovieInteractor
 	private let formatter = DateFormatter()
 	
 	init(view: UpcomingMoviesView?,
-		 interactor: MoviesInteractor = MoviesInteractor()) {
+		 interactor: MovieInteractor = MovieInteractor()) {
 		self.view = view
 		self.interactor = interactor
 	}
@@ -35,11 +35,11 @@ class UpcomingMoviesPresenter {
 		interactor.fetchUpcomingMovies { [weak self] movies, _ in
 			guard let self = self else { return }
 			
-			if let safeMovies = movies {
-				if safeMovies.isEmpty {
+			if let movies = movies {
+				if movies.isEmpty {
 					self.view?.show(error: "No data found")
 				} else {
-					self.view?.show(movies: safeMovies)
+					self.view?.show(movies: movies)
 				}
 			} else {
 				self.view?.show(error: "Some error happened retrieving data")

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MoviesInteractor {
+class MovieInteractor {
 	
 	private let movieRepository: MovieRepository
 	private let genreInteractor: GenreInteractor
@@ -26,7 +26,7 @@ class MoviesInteractor {
 		})
 	}
 	
-	func fetchMovies(genres: [Genre]?, completion: @escaping ([MovieModel]?, Error?) -> ()) {
+	private func fetchMovies(genres: [Genre]?, completion: @escaping ([MovieModel]?, Error?) -> ()) {
 		movieRepository.getMovies { movies, error in
 			if let movies = movies {
 				let moviesModels = movies.map({ MovieModel(with: $0, genres: genres) })
