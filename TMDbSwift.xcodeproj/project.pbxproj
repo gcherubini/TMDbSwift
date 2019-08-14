@@ -13,6 +13,7 @@
 		792982A92303C12E00B10B4A /* GenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1712A2303B9B8001AEACD /* GenresResponse.swift */; };
 		792982AA2303C13100B10B4A /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1712B2303B9B9001AEACD /* GenreResponse.swift */; };
 		792BEAA823045056001C7B6B /* GenreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792BEAA723045056001C7B6B /* GenreInteractor.swift */; };
+		792BEAAA23045462001C7B6B /* GenreMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792BEAA923045462001C7B6B /* GenreMockService.swift */; };
 		799D190723034E080012C5BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D190623034E080012C5BC /* AppDelegate.swift */; };
 		799D190923034E080012C5BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D190823034E080012C5BC /* ViewController.swift */; };
 		799D190E23034E0C0012C5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799D190D23034E0C0012C5BC /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		4910DE6AC541ED079510F503 /* Pods-TMDbSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDbSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-TMDbSwiftTests/Pods-TMDbSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B820559BE3A14826AD6152F /* Pods_TMDbSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDbSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792BEAA723045056001C7B6B /* GenreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreInteractor.swift; sourceTree = "<group>"; };
+		792BEAA923045462001C7B6B /* GenreMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMockService.swift; sourceTree = "<group>"; };
 		799D190323034E080012C5BC /* TMDbSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDbSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799D190623034E080012C5BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799D190823034E080012C5BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				79D1711D2303AA03001AEACD /* model */,
 				79D171102303574E001AEACD /* MovieMockService.swift */,
+				792BEAA923045462001C7B6B /* GenreMockService.swift */,
 				79D1710D23035744001AEACD /* MovieService.swift */,
 			);
 			path = movie;
@@ -613,6 +616,7 @@
 				792982A92303C12E00B10B4A /* GenresResponse.swift in Sources */,
 				79D170F723034F87001AEACD /* AppCoordinator.swift in Sources */,
 				79D1710B230356FB001AEACD /* MoviesInteractor.swift in Sources */,
+				792BEAAA23045462001C7B6B /* GenreMockService.swift in Sources */,
 				792982AA2303C13100B10B4A /* GenreResponse.swift in Sources */,
 				79D171112303574E001AEACD /* MovieMockService.swift in Sources */,
 				792BEAA823045056001C7B6B /* GenreInteractor.swift in Sources */,

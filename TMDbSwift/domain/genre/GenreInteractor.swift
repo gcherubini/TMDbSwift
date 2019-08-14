@@ -17,7 +17,8 @@ class GenreInteractor {
 	private let genreRepository: GenreRepository
 	private var genres: [Genre]?
 	
-	init(genreRepository: GenreRepository = GenreService()) {
+	init(genreRepository: GenreRepository = ProcessInfo.processInfo.arguments.contains("MOCK")
+		? GenreMockService() : GenreService()) {
 		self.genreRepository = genreRepository
 	}
 	

@@ -13,8 +13,9 @@ class MoviesInteractor {
 	private let movieRepository: MovieRepository
 	private let genreInteractor: GenreInteractor
 	
-	init(movieRepository: MovieRepository = MovieService(),
-		 genreInteractor: GenreInteractor = GenreInteractor()) {
+	init(genreInteractor: GenreInteractor = GenreInteractor(),
+		 movieRepository: MovieRepository = ProcessInfo.processInfo.arguments.contains("MOCK")
+		? MovieMockService() : MovieService()) {
 		self.movieRepository = movieRepository
 		self.genreInteractor = genreInteractor
 	}
