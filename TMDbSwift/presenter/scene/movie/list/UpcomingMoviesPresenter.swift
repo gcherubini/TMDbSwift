@@ -42,6 +42,7 @@ class UpcomingMoviesPresenter {
 			}
 			
 			self.view?.toogleIndicator(active: false)
+			self.view?.endPullRefreshControl()
 		}
 	}
 	

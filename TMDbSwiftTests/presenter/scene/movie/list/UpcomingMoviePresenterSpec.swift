@@ -55,6 +55,8 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 					sut.load()
 					
 					expect(viewMock.showedMovies).to(equal(moviesModelsMock))
+					expect(viewMock.isIndicatorActive).to(beFalse())
+					expect(viewMock.hasEndedPullRefresh).to(beTrue())
 				}
 				
 				it("show no data found error when movies model are empty") {
@@ -71,6 +73,8 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 					sut.load()
 					
 					expect(viewMock.showedError).to(equal("No data found"))
+					expect(viewMock.isIndicatorActive).to(beFalse())
+					expect(viewMock.hasEndedPullRefresh).to(beTrue())
 				}
 				
 				it("show generic error when movies list is nil") {
@@ -86,6 +90,8 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 					sut.load()
 					
 					expect(viewMock.showedError).to(equal("Some error happened retrieving data"))
+					expect(viewMock.isIndicatorActive).to(beFalse())
+					expect(viewMock.hasEndedPullRefresh).to(beTrue())
 				}
 			}
 			

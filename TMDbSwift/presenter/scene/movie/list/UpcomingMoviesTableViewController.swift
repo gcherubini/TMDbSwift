@@ -11,12 +11,13 @@ import Foundation
 import UIKit
 
 protocol UpcomingMoviesView: class{
+	func endPullRefreshControl()
 	func toogleIndicator(active: Bool)
 	func show(movies: [MovieModel])
 	func show(error: String)
 }
 
-class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesView {
+class UpcomingMoviesTableViewController: UITableViewController {
 	
 	var presenter: UpcomingMoviesPresenter?
 	
@@ -24,14 +25,12 @@ class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesVi
 	
 	private var indicator: UIActivityIndicatorView = UIActivityIndicatorView()
 	private var errorLabel: UILabel = UILabel()
-	
+
 	// MARK: View lifecycle
 	override func viewDidLoad() {
 		self.navigationItem.title = "Upcoming movies"
-
 		setupIndicatorView()
-		setupTableErrorLabel()
-		
+		setupTableView()
 		presenter?.load()
 	}
 	
@@ -41,6 +40,16 @@ class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesVi
 		indicator.style = .gray
 		indicator.center = self.view.center
 		indicator.hidesWhenStopped = true
+	}
+	
+	func setupTableView() {
+		refreshControl = UIRefreshControl()
+		if let refreshControl = refreshControl {
+			refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+			tableView.refreshControl = refreshControl
+		}
+		
+		setupTableErrorLabel()
 	}
 	
 	private func setupTableErrorLabel() {
@@ -67,7 +76,19 @@ class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesVi
 		presenter?.didSelect(movie: movies[indexPath.row])
 	}
 	
-	// MARK: UpcomingMoviesView implementations
+	@objc private func didPullToRefresh(_ sender: Any) {
+		presenter?.load()
+	}
+}
+
+extension UpcomingMoviesTableViewController: UpcomingMoviesView {
+	func endPullRefreshControl() {
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
+			
+			self.refreshControl?.endRefreshing()
+		}
+	}
 	
 	func toogleIndicator(active: Bool) {
 		DispatchQueue.main.async { [weak self] in
