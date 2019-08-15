@@ -18,4 +18,8 @@ class SceneFactory {
 		viewController.presenter = presenter
 		return viewController
 	}
+	
+	func buildMovieDetails() -> MovieDetailsViewController {
+		return MovieDetailsViewController()
+	}
 }

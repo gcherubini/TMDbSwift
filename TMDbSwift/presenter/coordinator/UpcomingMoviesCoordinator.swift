@@ -32,6 +32,7 @@ class UpcomingMoviesCoordinator: Coordinator {
 
 extension UpcomingMoviesCoordinator: UpcomingMoviesDelegate {
 	func didSelect(movie: MovieModel) {
-		start()
+		let viewController = sceneFactory.buildMovieDetails()
+		navigationController.pushViewController(viewController, animated: true)
 	}
 }

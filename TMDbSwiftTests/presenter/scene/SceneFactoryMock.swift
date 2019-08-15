@@ -12,12 +12,19 @@ import UIKit
 
 class SceneFactoryMock: SceneFactory {
 	let tableViewControllerMock: UpcomingMoviesTableViewController
+	let movieDetailsViewControllerMock: MovieDetailsViewController
 	
-	init(tableViewControllerMock: UpcomingMoviesTableViewController) {
+	init(tableViewControllerMock: UpcomingMoviesTableViewController,
+		 movieDetailsViewControllerMock: MovieDetailsViewController) {
 		self.tableViewControllerMock = tableViewControllerMock
+		self.movieDetailsViewControllerMock = movieDetailsViewControllerMock
 	}
 	
 	override func buildUpcomingMovies(delegate: UpcomingMoviesDelegate) -> UpcomingMoviesTableViewController {
-		return self.tableViewControllerMock
+		return tableViewControllerMock
+	}
+	
+	override func buildMovieDetails() -> MovieDetailsViewController {
+		return movieDetailsViewControllerMock
 	}
 }
