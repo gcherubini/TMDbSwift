@@ -24,7 +24,7 @@ class SceneFactoryMock: SceneFactory {
 		return tableViewControllerMock
 	}
 	
-	override func buildMovieDetails() -> MovieDetailsViewController {
+	override func buildMovieDetails(movieModel: MovieModel) -> MovieDetailsViewController {
 		return movieDetailsViewControllerMock
 	}
 }

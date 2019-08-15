@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailsViewController" customModule="TMDbSwift" customModuleProvider="target">
             <connections>
+                <outlet property="genresLabel" destination="UhT-QF-TPa" id="7of-We-3RJ"/>
+                <outlet property="overviewLabel" destination="9tl-q1-b3w" id="gr7-Is-5Xc"/>
+                <outlet property="posterImage" destination="90O-ay-mYs" id="PQz-Ku-tU9"/>
+                <outlet property="releaseDateLabel" destination="AWV-Yw-BYH" id="ifC-oI-xC5"/>
+                <outlet property="titleLabel" destination="OZN-BI-F6V" id="I8q-y1-xlu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +25,66 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-BI-F6V">
-                    <rect key="frame" x="162.5" y="442.5" width="89" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90O-ay-mYs">
+                    <rect key="frame" x="132" y="74" width="150" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="Za3-jh-w6K"/>
+                        <constraint firstAttribute="width" constant="150" id="cmk-vN-hIM"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast &amp; Furious Presents: Hobbs &amp; Shaw" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-BI-F6V">
+                    <rect key="frame" x="30" y="279" width="354" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9tl-q1-b3w">
+                    <rect key="frame" x="26" y="381" width="362" height="451"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">A spinoff of The Fate of the Furious, focusing on Johnson's US Diplomatic Security Agent Luke Hobbs forming an unlikely alliance with Statham's Deckard Shaw.\r Director: David Leitch Writers: Chris Morgan (story by), Chris Morgan (screenplay by) And Stars:  More Details:-https://4igpost.in/TMDB  Dwayne Johnson, Jason Statham, Idris Elba</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMY-Xa-Pae">
+                    <rect key="frame" x="30" y="354" width="97" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Adventure, Comedy, Drama, Horror, Action, Comedy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhT-QF-TPa">
+                    <rect key="frame" x="30" y="310.5" width="354" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02-02-2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWV-Yw-BYH">
+                    <rect key="frame" x="132" y="354" width="85" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="OZN-BI-F6V" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5Tw-OV-p2i"/>
-                <constraint firstItem="OZN-BI-F6V" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="sSG-TB-XW6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UhT-QF-TPa" secondAttribute="trailing" constant="30" id="708-Xf-a9X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9tl-q1-b3w" secondAttribute="trailing" constant="26" id="8Ph-yk-T2y"/>
+                <constraint firstItem="UhT-QF-TPa" firstAttribute="top" secondItem="OZN-BI-F6V" secondAttribute="bottom" constant="10" id="Cep-2d-at1"/>
+                <constraint firstItem="AWV-Yw-BYH" firstAttribute="top" secondItem="UhT-QF-TPa" secondAttribute="bottom" constant="10" id="J6H-IM-ZZh"/>
+                <constraint firstItem="AWV-Yw-BYH" firstAttribute="leading" secondItem="uMY-Xa-Pae" secondAttribute="trailing" constant="5" id="Ltn-9a-5DL"/>
+                <constraint firstItem="90O-ay-mYs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MdE-jx-Tdn"/>
+                <constraint firstItem="90O-ay-mYs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="NRa-gj-ZsM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OZN-BI-F6V" secondAttribute="trailing" constant="30" id="Srj-tU-7iG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9tl-q1-b3w" secondAttribute="bottom" constant="30" id="Tl4-lE-fXl"/>
+                <constraint firstItem="UhT-QF-TPa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Y0G-YB-5fn"/>
+                <constraint firstItem="OZN-BI-F6V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jqL-y4-dqd"/>
+                <constraint firstItem="uMY-Xa-Pae" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="nlt-wz-hAu"/>
+                <constraint firstItem="uMY-Xa-Pae" firstAttribute="top" secondItem="UhT-QF-TPa" secondAttribute="bottom" constant="10" id="rCU-4e-zwo"/>
+                <constraint firstItem="OZN-BI-F6V" firstAttribute="top" secondItem="90O-ay-mYs" secondAttribute="bottom" constant="25" id="srJ-h7-PwT"/>
+                <constraint firstItem="9tl-q1-b3w" firstAttribute="top" secondItem="uMY-Xa-Pae" secondAttribute="bottom" constant="10" id="vIh-wG-zBC"/>
+                <constraint firstItem="9tl-q1-b3w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="vyA-qZ-X1u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
         </view>
     </objects>
 </document>
