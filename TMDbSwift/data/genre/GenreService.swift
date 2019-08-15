@@ -18,9 +18,9 @@ class GenreService: GenreRepository {
 			case let .success(moyaResponse):
 				do {
 					let response = try JSONDecoder().decode(GenresResponse.self, from: moyaResponse.data)
-					let genres = response.genres.map({
+					let genres = response.genres.map {
 						Genre(with: $0)
-					})
+					}
 					completion(genres, nil)
 				} catch let error {
 					print(error)

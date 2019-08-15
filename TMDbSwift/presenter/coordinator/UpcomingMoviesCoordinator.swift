@@ -12,13 +12,22 @@ import UIKit
 class UpcomingMoviesCoordinator: Coordinator {
 	
 	private let navigationController: UINavigationController
+	private let sceneFactory: SceneFactory
 	
-	init(navigationController: UINavigationController) {
+	init(navigationController: UINavigationController,
+		 sceneFactory: SceneFactory = SceneFactory()) {
 		self.navigationController = navigationController
+		self.sceneFactory = sceneFactory
 	}
 	
 	func start() {
-		let viewController = UpcomingMoviesTableViewController()
+		let viewController = sceneFactory.buildUpcomingMovies(delegate: self)
 		navigationController.pushViewController(viewController, animated: true)
+	}
+}
+
+extension UpcomingMoviesCoordinator: UpcomingMoviesDelegate {
+	func didSelect(movie: MovieModel) {
+		start()
 	}
 }

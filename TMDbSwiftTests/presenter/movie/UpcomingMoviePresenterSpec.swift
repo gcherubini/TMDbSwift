@@ -15,6 +15,8 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 	override func spec() {
 		var movieInteractorMock: MovieInteractor!
 		var viewMock: UpcomingMoviesViewMock!
+		var delegateMock: UpcomingMoviesDelegateMock!
+
 		var sut: UpcomingMoviesPresenter!
 		
 		describe("UpcomingMoviesPresenter") {
@@ -22,13 +24,16 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 				beforeEach {
 					viewMock = UpcomingMoviesViewMock()
 					movieInteractorMock = MovieInteractorMock()
+					delegateMock = UpcomingMoviesDelegateMock()
 				}
 				
 				it("toogle indicator as active") {
 					movieInteractorMock = MovieInteractorMock(callFetchComplete: false)
 					sut = UpcomingMoviesPresenter(
 						view: viewMock,
-						interactor: movieInteractorMock)
+						interactor: movieInteractorMock,
+						delegate: delegateMock
+					)
 					
 					sut.load()
 					expect(viewMock.isIndicatorActive).to(beTrue())
@@ -81,6 +86,15 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 					sut.load()
 					
 					expect(viewMock.showedError).to(equal("Some error happened retrieving data"))
+				}
+			}
+			
+			describe("on movie selection") {
+				it("fire didSelect delegate") {
+					let movieMock: MovieModel =
+						MovieModel(title: "", imageUrl: "", overview: "", genres: "", releaseDate: "")
+					sut.didSelect(movie: movieMock)
+					expect(delegateMock.didSelectMovie).to(equal(movieMock))
 				}
 			}
 		}

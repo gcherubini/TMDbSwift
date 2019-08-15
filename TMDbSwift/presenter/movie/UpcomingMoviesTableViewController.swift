@@ -10,9 +10,15 @@ import Foundation
 
 import UIKit
 
+protocol UpcomingMoviesView: class{
+	func toogleIndicator(active: Bool)
+	func show(movies: [MovieModel])
+	func show(error: String)
+}
+
 class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesView {
 	
-	private var presenter: UpcomingMoviesPresenter?
+	var presenter: UpcomingMoviesPresenter?
 	
 	var movies = [MovieModel]()
 	
@@ -26,7 +32,6 @@ class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesVi
 		setupIndicatorView()
 		setupTableErrorLabel()
 		
-		presenter = UpcomingMoviesPresenter(view: self)
 		presenter?.load()
 	}
 	
@@ -56,6 +61,10 @@ class UpcomingMoviesTableViewController: UITableViewController, UpcomingMoviesVi
 		let cell = Bundle.main.loadNibNamed(UpcomingMovieCell.cellNibName, owner: self, options: nil)?.first as! UpcomingMovieCell
 		cell.loadMovie(with: movies[indexPath.row])
 		return cell
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		presenter?.didSelect(movie: movies[indexPath.row])
 	}
 	
 	// MARK: UpcomingMoviesView implementations

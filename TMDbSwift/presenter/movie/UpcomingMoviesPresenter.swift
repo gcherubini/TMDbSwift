@@ -8,22 +8,22 @@
 
 import Foundation
 
-protocol UpcomingMoviesView: class{
-	func toogleIndicator(active: Bool)
-	func show(movies: [MovieModel])
-	func show(error: String)
+protocol UpcomingMoviesDelegate: class {
+	func didSelect(movie: MovieModel)
 }
 
 class UpcomingMoviesPresenter {
-	
 	private weak var view: UpcomingMoviesView?
 	private let interactor: MovieInteractor
+	private let delegate: UpcomingMoviesDelegate?
 	private let formatter = DateFormatter()
 	
 	init(view: UpcomingMoviesView?,
-		 interactor: MovieInteractor = MovieInteractor()) {
+		 interactor: MovieInteractor = MovieInteractor(),
+		 delegate: UpcomingMoviesDelegate? = nil) {
 		self.view = view
 		self.interactor = interactor
+		self.delegate = delegate
 	}
 	
 	func load() {
@@ -47,5 +47,9 @@ class UpcomingMoviesPresenter {
 			
 			self.view?.toogleIndicator(active: false)
 		}
+	}
+	
+	func didSelect(movie: MovieModel) {
+		delegate?.didSelect(movie: movie)
 	}
 }
