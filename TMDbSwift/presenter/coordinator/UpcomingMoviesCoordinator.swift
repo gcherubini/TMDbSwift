@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol UpcomingMoviesDelegate: class {
+	func didSelect(movie: MovieModel)
+}
+
 class UpcomingMoviesCoordinator: Coordinator {
 	
 	private let navigationController: UINavigationController

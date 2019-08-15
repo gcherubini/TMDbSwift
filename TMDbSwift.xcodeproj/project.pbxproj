@@ -24,6 +24,13 @@
 		792BEABF2304A0FE001C7B6B /* UpcomingMoviesViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792BEABE2304A0FE001C7B6B /* UpcomingMoviesViewMock.swift */; };
 		793543382304FFF500F7598F /* UpcomingMoviesDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793543372304FFF500F7598F /* UpcomingMoviesDelegateMock.swift */; };
 		7935433A230505CC00F7598F /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79354339230505CC00F7598F /* SceneFactory.swift */; };
+		79354341230597AC00F7598F /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79354340230597AC00F7598F /* AppCoordinatorSpec.swift */; };
+		793543432305BDAC00F7598F /* UpcomingMoviesCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793543422305BDAC00F7598F /* UpcomingMoviesCoordinatorMock.swift */; };
+		793543452305BDD800F7598F /* CoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793543442305BDD800F7598F /* CoordinatorFactoryMock.swift */; };
+		793543472305BDF700F7598F /* UIWindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793543462305BDF700F7598F /* UIWindowMock.swift */; };
+		793543492305D4B100F7598F /* UpcomingMoviesCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793543482305D4B100F7598F /* UpcomingMoviesCoordinatorSpec.swift */; };
+		7935434C2305D76900F7598F /* SceneFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935434B2305D76900F7598F /* SceneFactoryMock.swift */; };
+		7935434E2305D7D500F7598F /* UINavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935434D2305D7D500F7598F /* UINavigationControllerMock.swift */; };
 		799D190723034E080012C5BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D190623034E080012C5BC /* AppDelegate.swift */; };
 		799D190923034E080012C5BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D190823034E080012C5BC /* ViewController.swift */; };
 		799D190E23034E0C0012C5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799D190D23034E0C0012C5BC /* Assets.xcassets */; };
@@ -89,6 +96,13 @@
 		792BEABE2304A0FE001C7B6B /* UpcomingMoviesViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesViewMock.swift; sourceTree = "<group>"; };
 		793543372304FFF500F7598F /* UpcomingMoviesDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesDelegateMock.swift; sourceTree = "<group>"; };
 		79354339230505CC00F7598F /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
+		79354340230597AC00F7598F /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
+		793543422305BDAC00F7598F /* UpcomingMoviesCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesCoordinatorMock.swift; sourceTree = "<group>"; };
+		793543442305BDD800F7598F /* CoordinatorFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryMock.swift; sourceTree = "<group>"; };
+		793543462305BDF700F7598F /* UIWindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowMock.swift; sourceTree = "<group>"; };
+		793543482305D4B100F7598F /* UpcomingMoviesCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesCoordinatorSpec.swift; sourceTree = "<group>"; };
+		7935434B2305D76900F7598F /* SceneFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactoryMock.swift; sourceTree = "<group>"; };
+		7935434D2305D7D500F7598F /* UINavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerMock.swift; sourceTree = "<group>"; };
 		799D190323034E080012C5BC /* TMDbSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDbSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799D190623034E080012C5BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799D190823034E080012C5BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +226,9 @@
 		792BEABA23049F51001C7B6B /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				792BEABB23049F84001C7B6B /* movie */,
+				7935433F2305979900F7598F /* coordinator */,
+				7935434A2305D75100F7598F /* scene */,
+				7935434D2305D7D500F7598F /* UINavigationControllerMock.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -220,11 +236,70 @@
 		792BEABB23049F84001C7B6B /* movie */ = {
 			isa = PBXGroup;
 			children = (
+				7935433D230596B700F7598F /* list */,
+			);
+			path = movie;
+			sourceTree = "<group>";
+		};
+		7935433B2305966900F7598F /* list */ = {
+			isa = PBXGroup;
+			children = (
+				79D1710123035063001AEACD /* UpcomingMoviesTableView.xib */,
+				79D17116230364A3001AEACD /* UpcomingMovieCell.xib */,
+				79D170FF2303502E001AEACD /* UpcomingMoviesTableViewController.swift */,
+				79D1711223036062001AEACD /* UpcomingMoviesPresenter.swift */,
+				79D1710723035632001AEACD /* MovieModel.swift */,
+				79D171142303636A001AEACD /* UpcomingMovieCell.swift */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		7935433C2305967900F7598F /* details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
+		7935433D230596B700F7598F /* list */ = {
+			isa = PBXGroup;
+			children = (
 				792BEABC23049F94001C7B6B /* UpcomingMoviePresenterSpec.swift */,
 				792BEABE2304A0FE001C7B6B /* UpcomingMoviesViewMock.swift */,
 				793543372304FFF500F7598F /* UpcomingMoviesDelegateMock.swift */,
 			);
-			path = movie;
+			path = list;
+			sourceTree = "<group>";
+		};
+		7935433E2305974100F7598F /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				79D170FE23035004001AEACD /* movie */,
+				79354339230505CC00F7598F /* SceneFactory.swift */,
+				79D1711923039E0E001AEACD /* ImageViewExtensions.swift */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		7935433F2305979900F7598F /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				79354340230597AC00F7598F /* AppCoordinatorSpec.swift */,
+				793543482305D4B100F7598F /* UpcomingMoviesCoordinatorSpec.swift */,
+				793543422305BDAC00F7598F /* UpcomingMoviesCoordinatorMock.swift */,
+				793543442305BDD800F7598F /* CoordinatorFactoryMock.swift */,
+				793543462305BDF700F7598F /* UIWindowMock.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		7935434A2305D75100F7598F /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				792BEABB23049F84001C7B6B /* movie */,
+				7935434B2305D76900F7598F /* SceneFactoryMock.swift */,
+			);
+			path = scene;
 			sourceTree = "<group>";
 		};
 		799D18FA23034E080012C5BC = {
@@ -289,8 +364,7 @@
 			children = (
 				79D1711823039DF8001AEACD /* extension */,
 				79D170F523034F7A001AEACD /* coordinator */,
-				79D170FE23035004001AEACD /* movie */,
-				79354339230505CC00F7598F /* SceneFactory.swift */,
+				7935433E2305974100F7598F /* scene */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -298,8 +372,8 @@
 		79D170F523034F7A001AEACD /* coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				79D170F623034F87001AEACD /* AppCoordinator.swift */,
 				79D170FA23034FA9001AEACD /* UpcomingMoviesCoordinator.swift */,
+				79D170F623034F87001AEACD /* AppCoordinator.swift */,
 				79D170FC23034FDD001AEACD /* CoordinatorFactory.swift */,
 				79D170F823034F96001AEACD /* Coordinator.swift */,
 			);
@@ -309,12 +383,8 @@
 		79D170FE23035004001AEACD /* movie */ = {
 			isa = PBXGroup;
 			children = (
-				79D1710123035063001AEACD /* UpcomingMoviesTableView.xib */,
-				79D17116230364A3001AEACD /* UpcomingMovieCell.xib */,
-				79D170FF2303502E001AEACD /* UpcomingMoviesTableViewController.swift */,
-				79D1711223036062001AEACD /* UpcomingMoviesPresenter.swift */,
-				79D1710723035632001AEACD /* MovieModel.swift */,
-				79D171142303636A001AEACD /* UpcomingMovieCell.swift */,
+				7935433B2305966900F7598F /* list */,
+				7935433C2305967900F7598F /* details */,
 			);
 			path = movie;
 			sourceTree = "<group>";
@@ -362,7 +432,6 @@
 		79D1711823039DF8001AEACD /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				79D1711923039E0E001AEACD /* ImageViewExtensions.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -706,14 +775,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79354341230597AC00F7598F /* AppCoordinatorSpec.swift in Sources */,
+				7935434E2305D7D500F7598F /* UINavigationControllerMock.swift in Sources */,
+				7935434C2305D76900F7598F /* SceneFactoryMock.swift in Sources */,
+				793543432305BDAC00F7598F /* UpcomingMoviesCoordinatorMock.swift in Sources */,
 				79FA23CA2304B3B700B4B6F4 /* MovieInteractorMock.swift in Sources */,
+				793543472305BDF700F7598F /* UIWindowMock.swift in Sources */,
 				792BEAB123047DFF001C7B6B /* GenreInteractorSpec.swift in Sources */,
 				793543382304FFF500F7598F /* UpcomingMoviesDelegateMock.swift in Sources */,
 				792BEABF2304A0FE001C7B6B /* UpcomingMoviesViewMock.swift in Sources */,
 				792BEABD23049F94001C7B6B /* UpcomingMoviePresenterSpec.swift in Sources */,
 				792BEAB3230483EF001C7B6B /* MovieRepositoryMock.swift in Sources */,
 				792BEAB723048590001C7B6B /* GenreRepositoryMock.swift in Sources */,
+				793543492305D4B100F7598F /* UpcomingMoviesCoordinatorSpec.swift in Sources */,
 				792BEAAF23047DEB001C7B6B /* GenreInteractorMock.swift in Sources */,
+				793543452305BDD800F7598F /* CoordinatorFactoryMock.swift in Sources */,
 				792BEAB923049F27001C7B6B /* ErrorMock.swift in Sources */,
 				792BEAB5230484D9001C7B6B /* MovieInteractorSpec.swift in Sources */,
 			);

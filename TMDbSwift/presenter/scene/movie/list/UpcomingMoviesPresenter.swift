@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol UpcomingMoviesDelegate: class {
-	func didSelect(movie: MovieModel)
-}
-
 class UpcomingMoviesPresenter {
 	private weak var view: UpcomingMoviesView?
 	private let interactor: MovieInteractor

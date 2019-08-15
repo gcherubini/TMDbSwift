@@ -20,13 +20,13 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 		var sut: UpcomingMoviesPresenter!
 		
 		describe("UpcomingMoviesPresenter") {
+			beforeEach {
+				viewMock = UpcomingMoviesViewMock()
+				movieInteractorMock = MovieInteractorMock()
+				delegateMock = UpcomingMoviesDelegateMock()
+			}
+			
 			describe("on load") {
-				beforeEach {
-					viewMock = UpcomingMoviesViewMock()
-					movieInteractorMock = MovieInteractorMock()
-					delegateMock = UpcomingMoviesDelegateMock()
-				}
-				
 				it("toogle indicator as active") {
 					movieInteractorMock = MovieInteractorMock(callFetchComplete: false)
 					sut = UpcomingMoviesPresenter(
@@ -91,6 +91,11 @@ class UpcomingMoviesPresenterSpec: QuickSpec {
 			
 			describe("on movie selection") {
 				it("fire didSelect delegate") {
+					sut = UpcomingMoviesPresenter(
+						view: viewMock,
+						interactor: movieInteractorMock,
+						delegate: delegateMock
+					)
 					let movieMock: MovieModel =
 						MovieModel(title: "", imageUrl: "", overview: "", genres: "", releaseDate: "")
 					sut.didSelect(movie: movieMock)
