@@ -35,7 +35,7 @@ Ps.: The automated commands are placed in `Makefile`
 
 In order to have the network mocked up you need to run the application with the pre-configured 'Mock' build scheme, as you can see in the image below:
 
-![Mock Build Environment](images/mockEnvironmentScheme)
+![Mock Build Environment](images/mockEnvironmentScheme.png)
 
 If you want to change the mocked results, just update with your own responses the files below:
 
