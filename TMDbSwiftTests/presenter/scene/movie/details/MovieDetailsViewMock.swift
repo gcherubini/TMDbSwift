@@ -12,7 +12,7 @@ import Foundation
 
 class MovieDetailsViewMock: MovieDetailsView {
 	var showedMovie: MovieModel?
-	
+
 	func show(movie: MovieModel) {
 		showedMovie = movie
 	}

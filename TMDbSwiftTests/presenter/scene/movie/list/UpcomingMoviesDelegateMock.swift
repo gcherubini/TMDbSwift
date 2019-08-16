@@ -11,9 +11,9 @@ import Foundation
 @testable import TMDbSwift
 
 class UpcomingMoviesDelegateMock: UpcomingMoviesDelegate {
-	
+
 	var didSelectMovie: MovieModel?
-	
+
 	func didSelect(movie: MovieModel) {
 		didSelectMovie = movie
 	}

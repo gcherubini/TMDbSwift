@@ -4,6 +4,7 @@ target 'TMDbSwift' do
   use_frameworks!
 
 	pod 'Moya', '13.0.0'
+	pod 'SwiftLint'
 
 	abstract_target 'Tests' do
 		target "TMDbSwiftTests"

@@ -11,7 +11,7 @@ import Foundation
 
 class UpcomingMoviesCoordinatorMock: UpcomingMoviesCoordinator {
 	var hasStarted: Bool?
-	
+
 	override func start() {
 		hasStarted = true
 	}

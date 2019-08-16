@@ -12,12 +12,12 @@ import UIKit
 
 class CoordinatorsFactoryMock: CoordinatorsFactory {
 	let upComingMoviesCoordinatorMock: UpcomingMoviesCoordinator
-	
+
 	init(upcomingMoviesCoordinatorMock: UpcomingMoviesCoordinator) {
 		self.upComingMoviesCoordinatorMock = upcomingMoviesCoordinatorMock
 		super.init(navigationController: UINavigationController())
 	}
-	
+
 	override func buildUpcomingMoviesCoordinator() -> UpcomingMoviesCoordinator {
 		return upComingMoviesCoordinatorMock
 	}

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class UpcomingMovieCell: UITableViewCell {
-	
+
 	static let cellNibName = "UpcomingMovieCell"
-	
+
 	@IBOutlet weak var posterImage: UIImageView!
 	@IBOutlet weak var title: UILabel!
 	@IBOutlet weak var genres: UILabel!
@@ -25,5 +25,3 @@ class UpcomingMovieCell: UITableViewCell {
 		releaseDate.text = movieModel.releaseDate ?? "Unknown Release Date"
 	}
 }
-
-

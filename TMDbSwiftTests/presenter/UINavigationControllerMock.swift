@@ -13,7 +13,7 @@ import UIKit
 class UINavigationControllerMock: UINavigationController {
 	var pushedViewController: UIViewController?
 	var isAnimated: Bool?
-	
+
 	override func pushViewController(_ viewController: UIViewController, animated: Bool) {
 		pushedViewController = viewController
 		isAnimated = animated

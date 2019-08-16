@@ -11,14 +11,14 @@ import Foundation
 @testable import TMDbSwift
 
 class GenreInteractorMock: GenreInteractor {
-	
+
 	let genresMock: [Genre]?
-	
+
 	init(genresMock: [Genre]? = nil) {
 		self.genresMock = genresMock
 	}
-	
-	override func fetchGenres(completion: @escaping ([Genre]?) -> ()) {
+
+	override func fetchGenres(completion: @escaping ([Genre]?) -> Void) {
 		completion(genresMock)
 	}
 }

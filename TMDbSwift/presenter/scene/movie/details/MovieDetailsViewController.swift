@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MovieDetailsView {
-	func show(movie: MovieModel);
+	func show(movie: MovieModel)
 }
 
 class MovieDetailsViewController: UIViewController {
@@ -18,9 +18,9 @@ class MovieDetailsViewController: UIViewController {
 	@IBOutlet weak var genresLabel: UILabel!
 	@IBOutlet weak var releaseDateLabel: UILabel!
 	@IBOutlet weak var overviewLabel: UITextView!
-	
+
 	var presenter: MovieDetailsPresenter?
-	
+
 	override func viewDidLoad() {
         super.viewDidLoad()
 		presenter?.load()

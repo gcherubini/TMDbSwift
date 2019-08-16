@@ -19,19 +19,19 @@ struct MovieModel: Equatable {
 extension MovieModel {
 	init(with movie: Movie, genres: [Genre]?) {
 		title = movie.title
-		
+
 		if let posterImageUrl = movie.posterImageUrl {
 			imageUrl = "https://image.tmdb.org/t/p/w185\(posterImageUrl)"
 		} else {
 			imageUrl = nil
 		}
-		
+
 		overview = movie.overview
-		
+
 		releaseDate = movie.releaseDate
-		
+
 		var genresFound = [String]()
-		
+
 		if let movieGenresIds = movie.genreIds, let genres = genres {
 			for movieGenreId in movieGenresIds {
 				for genre in genres {
@@ -41,7 +41,7 @@ extension MovieModel {
 				}
 			}
 		}
-		
-		self.genres = genresFound.isEmpty ? nil : genresFound.joined(separator:", ")
+
+		self.genres = genresFound.isEmpty ? nil : genresFound.joined(separator: ", ")
 	}
 }

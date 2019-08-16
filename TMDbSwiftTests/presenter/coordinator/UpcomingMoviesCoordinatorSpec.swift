@@ -18,7 +18,7 @@ class UpcomingMoviesCoordinatorSpec: QuickSpec {
 		var detailsViewControllerMock: MovieDetailsViewController!
 		var sceneFactoryMock: SceneFactoryMock!
 		var sut: UpcomingMoviesCoordinator!
-		
+
 		describe("UpcomingMoviesCoordinator") {
 			beforeEach {
 				navigationControllerMock = UINavigationControllerMock()
@@ -29,12 +29,12 @@ class UpcomingMoviesCoordinatorSpec: QuickSpec {
 					tableViewControllerMock: moviesTableViewControllerMock,
 					movieDetailsViewControllerMock: detailsViewControllerMock
 				)
-				
+
 				sut = UpcomingMoviesCoordinator(
 					navigationController: navigationControllerMock,
 					sceneFactory: sceneFactoryMock)
 			}
-			
+
 			describe("on start") {
 				it("start upcoming movies TableView") {
 					sut.start()
@@ -44,7 +44,7 @@ class UpcomingMoviesCoordinatorSpec: QuickSpec {
 						.to(beTrue())
 				}
 			}
-			
+
 			describe("on movie is selected") {
 				it("start movie details view controller") {
 					let any = MovieModel(title: nil, imageUrl: nil, overview: nil, genres: nil, releaseDate: nil)

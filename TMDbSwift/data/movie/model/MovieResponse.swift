@@ -15,7 +15,7 @@ struct MovieResponse: Decodable {
 	let overview: String?
 	let releaseDate: String?
 	let genreIds: [Int]?
-	
+
 	enum CodingKeys: String, CodingKey {
 		case id = "id"
 		case title = "title"

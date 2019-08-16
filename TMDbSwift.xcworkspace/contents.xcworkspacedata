@@ -5,6 +5,9 @@
       location = "group:TMDbSwift.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Makefile">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

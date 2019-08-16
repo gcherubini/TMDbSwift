@@ -11,8 +11,8 @@ import Moya
 
 class MovieService: MovieRepository {
 	let provider = MoyaProvider<MovieApi>(callbackQueue: DispatchQueue.global(qos: .utility))
-	
-	func getMovies(completion: @escaping ([Movie]?, Error?) -> ()) {
+
+	func getMovies(completion: @escaping ([Movie]?, Error?) -> Void) {
 		provider.request(.getMovies) { result in
 			switch result {
 			case let .success(moyaResponse):

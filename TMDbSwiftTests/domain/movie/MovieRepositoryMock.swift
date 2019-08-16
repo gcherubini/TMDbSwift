@@ -11,16 +11,16 @@ import Foundation
 @testable import TMDbSwift
 
 class MovieRepositoryMock: MovieRepository {
-	
+
 	let moviesMock: [Movie]?
 	let errorMock: Error?
-	
+
 	init(moviesMock: [Movie]? = nil, errorMock: Error? = nil) {
 		self.moviesMock = moviesMock
 		self.errorMock = errorMock
 	}
-	
-	func getMovies(completion: @escaping ([Movie]?, Error?) -> ()) {
+
+	func getMovies(completion: @escaping ([Movie]?, Error?) -> Void) {
 		completion(moviesMock, errorMock)
 	}
 }

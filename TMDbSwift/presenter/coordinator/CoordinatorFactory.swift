@@ -11,11 +11,11 @@ import UIKit
 
 class CoordinatorsFactory {
 	private let navigationController: UINavigationController
-	
+
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
 	}
-	
+
 	func buildUpcomingMoviesCoordinator() -> UpcomingMoviesCoordinator {
 		return UpcomingMoviesCoordinator(navigationController: navigationController)
 	}

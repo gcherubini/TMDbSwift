@@ -18,7 +18,7 @@ class AppCoordinatorSpec: QuickSpec {
 		var upcomingMoviesCoordinatorMock: UpcomingMoviesCoordinatorMock!
 		var coordinatorFactoryMock: CoordinatorsFactoryMock!
 		var sut: AppCoordinator!
-		
+
 		describe("AppCoordinator") {
 			beforeEach {
 				windowMock = UIWindowMock()
@@ -30,7 +30,7 @@ class AppCoordinatorSpec: QuickSpec {
 					navigationController: navigationControllerMock,
 					coordinatorsFactory: coordinatorFactoryMock)
 			}
-			
+
 			describe("on init") {
 				it("setup window") {
 					expect(windowMock.rootViewController)
@@ -39,7 +39,7 @@ class AppCoordinatorSpec: QuickSpec {
 						.to(beTrue())
 				}
 			}
-			
+
 			describe("on start") {
 				it("start upcoming movies coordinators") {
 					sut.start()

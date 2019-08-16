@@ -15,9 +15,9 @@ class MovieDetailsPresenterSpec: QuickSpec {
 	override func spec() {
 		var movieModelMock: MovieModel!
 		var viewMock: MovieDetailsViewMock!
-		
+
 		var sut: MovieDetailsPresenter!
-		
+
 		describe("MovieDetailsPresenter") {
 			beforeEach {
 				movieModelMock = MovieModel(title: nil, imageUrl: nil, overview: nil, genres: nil, releaseDate: nil)
@@ -26,9 +26,9 @@ class MovieDetailsPresenterSpec: QuickSpec {
 					movieModel: movieModelMock,
 					view: viewMock
 				)
-				
+
 			}
-			
+
 			describe("on load") {
 				it("show movie model with view") {
 					sut.load()

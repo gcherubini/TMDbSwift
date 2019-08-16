@@ -12,7 +12,7 @@ import UIKit
 
 class UIWindowMock: UIWindow {
 	var hasMakeKeyAndVisible: Bool?
-	
+
 	override func makeKeyAndVisible() {
 		hasMakeKeyAndVisible = true
 	}

@@ -11,11 +11,11 @@ import Foundation
 @testable import TMDbSwift
 
 class MovieInteractorMock: MovieInteractor {
-	
+
 	let moviesModelMock: [MovieModel]?
 	let errorMock: Error?
 	let callFetchComplete: Bool
-	
+
 	init(moviesModelMock: [MovieModel]? = nil,
 		 errorMock: Error? = nil,
 		 callFetchComplete: Bool = true) {
@@ -23,8 +23,8 @@ class MovieInteractorMock: MovieInteractor {
 		self.errorMock = errorMock
 		self.callFetchComplete = callFetchComplete
 	}
-	
-	override func fetchUpcomingMovies(completion: @escaping ([MovieModel]?, Error?) -> ()) {
+
+	override func fetchUpcomingMovies(completion: @escaping ([MovieModel]?, Error?) -> Void) {
 		if callFetchComplete {
 			completion(moviesModelMock, errorMock)
 		}

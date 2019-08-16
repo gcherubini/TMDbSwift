@@ -17,7 +17,7 @@ enum MovieApi {
 extension MovieApi: TargetType {
 	private var apiKey: String { return "1f54bd990f1cdfb230adb312546d765d" }
 	var baseURL: URL { return URL(string: "https://api.themoviedb.org/3")! }
-	
+
 	var path: String {
 		switch self {
 		case .getMovies:
@@ -26,28 +26,28 @@ extension MovieApi: TargetType {
 			return "/genre/movie/list"
 		}
 	}
-	
+
 	var method: Moya.Method {
 		switch self {
 		case .getMovies, .getGenres:
 			return .get
 		}
 	}
-	
+
 	var task: Task {
 		switch self {
 		case .getMovies, .getGenres:
 			return .requestParameters(parameters: ["api_key": apiKey], encoding: URLEncoding.queryString)
 		}
 	}
-	
+
 	var sampleData: Data {
 		switch self {
 		case .getMovies, .getGenres:
 			return Data()
 		}
 	}
-	
+
 	var headers: [String: String]? {
 		return ["Content-type": "application/x-www-form-urlencoded"]
 	}

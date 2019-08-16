@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class AppCoordinator {
-	
+
 	private let window: UIWindow
 	private let navigationController: UINavigationController
 	private let coordinatorsFactory: CoordinatorsFactory
-	
+
 	init(window: UIWindow = UIWindow(),
 		 navigationController: UINavigationController,
 		 coordinatorsFactory: CoordinatorsFactory) {
@@ -23,12 +23,12 @@ class AppCoordinator {
 		self.coordinatorsFactory = coordinatorsFactory
 		setupWindow()
 	}
-	
+
 	private func setupWindow() {
 		window.rootViewController = navigationController
 		window.makeKeyAndVisible()
 	}
-	
+
 	func start() {
 		coordinatorsFactory
 			.buildUpcomingMoviesCoordinator()

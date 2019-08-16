@@ -11,8 +11,8 @@ import Moya
 
 class GenreService: GenreRepository {
 	let provider = MoyaProvider<MovieApi>(callbackQueue: DispatchQueue.global(qos: .utility))
-	
-	func getGenres(completion: @escaping ([Genre]?, Error?) -> ()) {
+
+	func getGenres(completion: @escaping ([Genre]?, Error?) -> Void) {
 		provider.request(.getGenres) { result in
 			switch result {
 			case let .success(moyaResponse):

@@ -14,16 +14,16 @@ protocol UpcomingMoviesDelegate: class {
 }
 
 class UpcomingMoviesCoordinator: Coordinator {
-	
+
 	private let navigationController: UINavigationController
 	private let sceneFactory: SceneFactory
-	
+
 	init(navigationController: UINavigationController,
 		 sceneFactory: SceneFactory = SceneFactory()) {
 		self.navigationController = navigationController
 		self.sceneFactory = sceneFactory
 	}
-	
+
 	func start() {
 		let viewController = sceneFactory.buildUpcomingMovies(delegate: self)
 		navigationController.pushViewController(viewController, animated: true)

@@ -14,19 +14,19 @@ class UpcomingMoviesViewMock: UpcomingMoviesView {
 	var isIndicatorActive: Bool?
 	var showedMovies: [MovieModel]?
 	var showedError: String?
-	
+
 	func endPullRefreshControl() {
 		hasEndedPullRefresh = true
 	}
-	
+
 	func toogleIndicator(active: Bool) {
 		self.isIndicatorActive = active
 	}
-	
+
 	func show(movies: [MovieModel]) {
 		showedMovies = movies
 	}
-	
+
 	func show(error: String) {
 		showedError = error
 	}

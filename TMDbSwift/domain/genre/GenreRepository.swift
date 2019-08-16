@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GenreRepository {
-	func getGenres(completion: @escaping ([Genre]?, Error?) -> ())
+	func getGenres(completion: @escaping ([Genre]?, Error?) -> Void)
 }

@@ -11,15 +11,15 @@ import Foundation
 @testable import TMDbSwift
 
 class GenreRepositoryMock: GenreRepository {
-	
+
 	let genresMock: [Genre]?
 	var isGetGenresCalled: Bool = false
-	
+
 	init(genresMock: [Genre]? = nil) {
 		self.genresMock = genresMock
 	}
-	
-	func getGenres(completion: @escaping ([Genre]?, Error?) -> ()) {
+
+	func getGenres(completion: @escaping ([Genre]?, Error?) -> Void) {
 		isGetGenresCalled = true
 		completion(genresMock, nil)
 	}

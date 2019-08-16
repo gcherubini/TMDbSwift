@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MovieRepository {
-	func getMovies(completion: @escaping ([Movie]?, Error?) -> ())
+	func getMovies(completion: @escaping ([Movie]?, Error?) -> Void)
 }

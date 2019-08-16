@@ -13,16 +13,16 @@ Fetch and return [Genres] from GenreRepositories with a completion,
 If a genre has already been fetched, it is stored and returned in future requests
 */
 class GenreInteractor {
-	
+
 	private let genreRepository: GenreRepository
 	private var genres: [Genre]?
-	
+
 	init(genreRepository: GenreRepository = ProcessInfo.processInfo.arguments.contains("MOCK")
 		? GenreMockService() : GenreService()) {
 		self.genreRepository = genreRepository
 	}
-	
-	func fetchGenres(completion: @escaping ([Genre]?) -> ()) {
+
+	func fetchGenres(completion: @escaping ([Genre]?) -> Void) {
 		if genres != nil {
 			completion(genres)
 		} else {

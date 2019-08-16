@@ -20,13 +20,13 @@ class GenreInteractorSpec: QuickSpec {
 
 		var repositoryMock: GenreRepositoryMock!
 		var sut: GenreInteractor!
-		
+
 		describe("GenreInteractor") {
 			beforeEach {
 				repositoryMock = GenreRepositoryMock(genresMock: genresMock)
 				sut = GenreInteractor(genreRepository: repositoryMock)
 			}
-			
+
 			describe("get") {
 				it("genres from repository when they had not been fetched yet") {
 					waitUntil(timeout: 5) { done in
@@ -37,7 +37,7 @@ class GenreInteractorSpec: QuickSpec {
 						}
 					}
 				}
-				
+
 				it("genres from interactor when they already have been stored") {
 					waitUntil(timeout: 5) { done in
 						sut.fetchGenres { genres in
