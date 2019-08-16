@@ -19,9 +19,13 @@ class UpcomingMovieCell: UITableViewCell {
 	@IBOutlet weak var releaseDate: UILabel!
 
 	func loadMovie(with movieModel: MovieModel) {
+		
 		posterImage.load(url: movieModel.imageUrl)
-		title.text = movieModel.title ?? "Unknown Title"
-		genres.text = movieModel.genres ?? "Unknown Genre"
-		releaseDate.text = movieModel.releaseDate ?? "Unknown Release Date"
+		title.text = movieModel.title ??
+			NSLocalizedString("unknown title", comment: "Unknown title message when value is nil")
+		genres.text = movieModel.genres ??
+			NSLocalizedString("unknown genres", comment: "Unknown genres message when value is nil")
+		releaseDate.text = movieModel.releaseDate ??
+			NSLocalizedString("unknown release date", comment: "Unknown date message when value is nil")
 	}
 }

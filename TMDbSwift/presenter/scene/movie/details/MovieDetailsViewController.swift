@@ -30,9 +30,13 @@ class MovieDetailsViewController: UIViewController {
 extension MovieDetailsViewController: MovieDetailsView {
 	func show(movie: MovieModel) {
 		posterImage.load(url: movie.imageUrl)
-		titleLabel.text = movie.title ?? "Unknown Title"
-		genresLabel.text = movie.genres ?? "Unknown Genres"
-		releaseDateLabel.text = movie.releaseDate ?? "Unknown Date"
-		overviewLabel.text = movie.overview ?? "Unknown Overview"
+		titleLabel.text = movie.title ??
+			NSLocalizedString("unknown title", comment: "Unknown title message when value is nil")
+		genresLabel.text = movie.genres ??
+			NSLocalizedString("unknown genres", comment: "Unknown genres message when value is nil")
+		releaseDateLabel.text = movie.releaseDate ??
+			NSLocalizedString("unknown", comment: "Unknown release date message when value is nil")
+		overviewLabel.text = movie.overview ??
+			NSLocalizedString("unknown overview", comment: "Unknown overview message when value is nil")
 	}
 }

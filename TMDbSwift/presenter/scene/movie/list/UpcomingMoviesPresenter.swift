@@ -33,12 +33,16 @@ class UpcomingMoviesPresenter {
 
 			if let movies = movies {
 				if movies.isEmpty {
-					self.view?.show(error: "No data found")
+					self.view?.show(error:
+						NSLocalizedString("no data found", comment: "no data found error when list fetched is empty")
+					)
 				} else {
 					self.view?.show(movies: movies)
 				}
 			} else {
-				self.view?.show(error: "Some error happened retrieving data")
+				self.view?.show(error:
+					NSLocalizedString("retrieving data error", comment: "generic retrieving data error message")
+				)
 			}
 
 			self.view?.toogleIndicator(active: false)

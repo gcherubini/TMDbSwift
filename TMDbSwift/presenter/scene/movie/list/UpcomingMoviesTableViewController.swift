@@ -28,7 +28,8 @@ class UpcomingMoviesTableViewController: UITableViewController {
 
 	// MARK: View lifecycle
 	override func viewDidLoad() {
-		self.navigationItem.title = "Upcoming movies"
+		self.navigationItem.title =
+			NSLocalizedString("upcoming movies", comment: "Upcoming movies view title")
 		setupIndicatorView()
 		setupTableView()
 		presenter?.load()

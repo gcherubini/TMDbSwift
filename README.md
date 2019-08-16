@@ -46,4 +46,3 @@ If you want to change the mocked results, just update with your own responses th
 * Unit test the factory classes: SceneFactory and CoordinatorFactory
 * Implement UI tests with mock environment to ensure the whole flow is working properly
 * Fetch more movies when when table view has finished scrolling
-* Implement Localization
