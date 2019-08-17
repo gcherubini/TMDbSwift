@@ -32,9 +32,9 @@ If one of these steps fail, the pipeline will fail as a whole. And, the develope
 
 
 
-Ps: 
+**Ps:** If you don't have some dependencies yet installed. Probably, `make check` command will fail. 
 
-If you don't have some dependencies yet installed. Probably, `make check` command will fail. So, just run the command:
+So, just run the command:
 
 `make setup` 
 
