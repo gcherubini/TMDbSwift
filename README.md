@@ -21,6 +21,7 @@ Frameworks adopted:
 ## Local Pipeline
 
 A local Continuous Integration pipeline was built to improve the code quality of the project. 
+The automated commands are placed in `Makefile`
 You just need to run the command `make check`.
 
 It runs the following steps in a orderly manner:
@@ -29,7 +30,15 @@ It runs the following steps in a orderly manner:
 
 If one of these steps fail, the pipeline will fail as a whole. And, the developer must fix the highlighted problems.
 
-Ps.: The automated commands are placed in `Makefile`
+
+
+Ps: 
+
+If you don't have some dependencies yet installed. Probably, `make check` command will fail. So, just run the command:
+
+`make setup` 
+
+It will install `xcpretty` and will execute `pod install`.
 
 ## Mock
 

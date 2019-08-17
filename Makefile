@@ -1,3 +1,6 @@
+setup:
+	sudo gem install xcpretty
+	pod install
 clean-derived-data:
 	rm -rf ~/Library/Developer/Xcode/DerivedData
 clean:
